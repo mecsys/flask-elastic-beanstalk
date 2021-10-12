@@ -3,6 +3,5 @@ from flask import Flask
 application = Flask(__name__)
 
 @application.route('/')
-def home():
+def application():
     return 'version 0.0.1'
-    
