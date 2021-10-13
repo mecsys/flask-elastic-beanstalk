@@ -1,8 +1,8 @@
 from flask import Flask
 
 # print a nice greeting.
-def say_hello(username = "World"):
-    return '<p>Hello %s!</p>\n' % username
+def say_hello(username = "World", version = "v0.0.1"):
+    return '<p>Hello %s!</p>\n<p><code>Version: %s</code></p>' % (username,version)
 
 # some bits of text for the page.
 header_text = '''
@@ -13,13 +13,14 @@ instructions = '''
     someone specific.</p>\n'''
 home_link = '<p><a href="/">Back</a></p>\n'
 footer_text = '</body>\n</html>'
+version = 'v0.0.6'
 
 # EB looks for an 'application' callable by default.
 application = Flask(__name__)
 
 # add a rule for the index page.
 application.add_url_rule('/', 'index', (lambda: header_text +
-    say_hello() + instructions + footer_text))
+    say_hello(version=version) + instructions + footer_text))
 
 # add a rule when the page is accessed with a name appended to the site
 # URL.
