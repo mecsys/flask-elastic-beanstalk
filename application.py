@@ -13,7 +13,7 @@ instructions = '''
     someone specific.</p>\n'''
 home_link = '<p><a href="/">Back</a></p>\n'
 footer_text = '</body>\n</html>'
-version = 'v0.0.5'
+version = 'v0.0.6'
 
 # EB looks for an 'application' callable by default.
 application = Flask(__name__)
